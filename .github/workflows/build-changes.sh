@@ -21,3 +21,4 @@ if [ -n "$BROADCAST" ]; then
 else
   exit 1  # error to kill the rest of the steps
 fi
+
