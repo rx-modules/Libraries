@@ -10,7 +10,7 @@ for PACK in $(ls smithed_libraries/packs); do
   echo $PACK "$PACK_VERSION" "$OLD_PACK_VERSION"
 
   # Check if the pack's version number has changed
-  if [ "$PACK_VERSION" != $OLD_PACK_VERSION ]; then
+  if [ "$PACK_VERSION" != "$OLD_PACK_VERSION" ]; then
     BROADCAST+=("-s broadcast[] = smithed_libraries/packs/$PACK")
   fi
 done
@@ -21,4 +21,3 @@ if [ -n "$BROADCAST" ]; then
 else
   exit 1  # error to kill the rest of the steps
 fi
-
