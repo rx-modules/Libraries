@@ -6,6 +6,8 @@ for PACK in $(ls smithed_libraries/packs); do
 
   OLD_PACK_VERSION=$(git show HEAD~1:smithed_libraries/packs/${PACK}/beet.yaml | grep "version:" | cut -d ":" -f 2)
   OLD_PACK_VERSION=$(sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' <<< "$OLD_PACK_VERSION")   # strip whitespace
+  
+  echo $PACK "$PACK_VERSION" "$OLD_PACK_VERSION"
 
   # Check if the pack's version number has changed
   if [ "$PACK_VERSION" != $OLD_PACK_VERSION ]; then
