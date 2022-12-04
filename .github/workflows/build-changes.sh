@@ -17,7 +17,7 @@ done
 
 # Build the packs (if there are any to build)
 if [ -n "$BROADCAST" ]; then
-  beet --log INFO -p beet-release.yaml "${BROADCAST[@]}"
+  poetry run beet --log INFO -p beet-release.yaml "${BROADCAST[@]}"
 else
   exit 1  # error to kill the rest of the steps
 fi
